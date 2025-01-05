@@ -1,4 +1,4 @@
-import { createNote, Note } from "../models/note.ts";
+import { createFirstNote, createNote, Note } from "../models/note.ts";
 
 const lsKey = "MY_LS_NOTES";
 
@@ -24,7 +24,7 @@ export function loadNotes(): Note[] {
 
   if (!rawNotes) {
     showNoNotesWarning();
-    return [createNote()]; // TODO: create a first note with a short description and hotkeys to use
+    return [createFirstNote()];
   }
 
   try {
@@ -49,7 +49,7 @@ export function loadNotes(): Note[] {
     return parsedNotes.sort(notesCompareFn);
   } catch {
     showNoNotesWarning();
-    return [createNote()];
+    return [createFirstNote()];
   }
 }
 
