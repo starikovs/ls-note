@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  /* Transition colors for all the elements: */
+  @apply transition-colors duration-200;
+}
