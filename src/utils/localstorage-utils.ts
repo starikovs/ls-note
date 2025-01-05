@@ -19,7 +19,6 @@ function notesCompareFn(a: Note, b: Note) {
 }
 
 export function loadNotes(): Note[] {
-  console.log("_debug", "loadNotes");
   const rawNotes = localStorage.getItem(lsKey);
 
   if (!rawNotes) {

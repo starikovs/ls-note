@@ -164,9 +164,7 @@ function useNotes(): [NotesState, Dispatch<NotesActions>] {
   });
 
   useEffect(() => {
-    console.log("_debug", "useLocalstorage", "it's time to store!");
     const timeout = setTimeout(() => {
-      console.log("_debug", "useLocalstorage", "storing...");
       saveNotes(notesState.notes);
     }, 1000);
 

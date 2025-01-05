@@ -11,11 +11,9 @@ function NoteList() {
 
   const activeNote =
     notesState.notes.find((note) => note.active) || notesState.notes[0];
-  console.log("_debug", "NoteList", "active", activeNote);
 
   const handleClick = useCallback(
     (note: Note) => {
-      console.log("_debug", "NoteList", "handleClick", note);
       dispatch({ type: "SET_ACTIVE", payload: note.id });
     },
     [dispatch],

@@ -17,12 +17,10 @@ type NoteInputProps = {
 
 const NoteInput = memo(
   function NoteInput({ note, onChange, onCaretChange }: NoteInputProps) {
-    console.log("_debug", "NoteInput", note.id);
     const [text, setText] = useState(note.content || "");
     const ref = useRef<HTMLTextAreaElement>(null);
 
     useEffect(() => {
-      console.log("_debug", "NoteInput", "re-rendering");
       setText(note.content);
 
       const textareaElement = ref.current;
@@ -31,7 +29,6 @@ const NoteInput = memo(
         // it doesn't set a focus on the beginning of the textarea without this setTimeout hack:
         setTimeout(() => {
           const caret = note.caret || 0;
-          console.log("_debug", "selection", textareaElement, caret);
           textareaElement.setSelectionRange(caret, caret);
           // focus() should go after setSelectionRange() to scroll to a cursor if it's outside textarea's visible area
           textareaElement.focus();
@@ -39,7 +36,6 @@ const NoteInput = memo(
       }
 
       return () => {
-        console.log("_debug", "NoteInput", "cleaning up");
         onCaretChange(note.id, textareaElement?.selectionStart || 0);
       };
     }, [note, onCaretChange]);
@@ -68,7 +64,6 @@ const NoteInput = memo(
     );
   },
   (prevProps, nextProps) => {
-    console.log("_debug", "NoteInput", "Comparing", prevProps, nextProps);
     return prevProps.note.id === nextProps.note.id;
   },
 );
