@@ -128,6 +128,10 @@ function reducer(state: NotesState, action: NotesActions): NotesState {
         ),
       };
     case "DELETE": {
+      if (state.notes.length === 1) {
+        return state;
+      }
+
       const index = state.notes.findIndex((note) =>
         action.payload ? note.id === action.payload : note.active,
       );
