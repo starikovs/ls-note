@@ -1,24 +1,24 @@
-# In-browser plain text note-taking app
+# Plain Text Note-Taking, Right in Your Browser
 
-This is a minimalist and secure in-browser plain text note-taking app.
+This is a simple, no-nonsense, secure note-taking app that lives in your browser.
 
-Use it when you want to quick edit something in plain text without cluttering your main Note app with temp notes. Notes are saved in your browser's local storage.
+Perfect for those quick edits when you don’t want to clutter up your main notes app with temporary stuff. Your notes are saved locally in your browser’s storage — no internet involved.
 
 ## Why in plain text?
 
-Because plain text is cool, and it has no formatting :)
+Because plain text is awesome — no formatting, no fuss.
 
-Sometimes I want to quickly edit something in plain text, I copy some text, I paste it, I get text pasted with formatting,
-then I google a hotkey of how to paste as plain text in my current OS or mobile device. On macOS you even have to do some gymnastics
-with your fingers to paste a plain text `Option+Shift+Command+V`.. And it's a pain.
+Ever tried to quickly edit something only to have it copy-pasted with annoying formatting? Then you’re stuck Googling hotkeys to paste as plain text. On macOS, it’s an acrobatic combo: Option+Shift+Command+V. What a hassle.
 
-This is a place when you can relax and edit something in plain text.
+This app lets you chill and edit in plain text, no drama.
 
-## Features 
-1. Notes are stored inside your browser's local storage
-2. No data is sent to the Internet
-3. No cookies or analytics are used
-4. It's mobile first
-5. On desktop, you can use the app with only the keyboard
-6. Caret position is saved for each note
-7. Dark / Light mode depending on your system settings
+## What’s cool about it?
+
+1. Notes are saved in your browser’s local storage
+2. No data goes online — your notes stay private
+3. No cookies, no trackers
+4. Designed with mobile in mind
+5. Full keyboard support for desktop users
+6. Remembers your caret position for each note
+7. Dark and light mode adjust to your system settings
+
