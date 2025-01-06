@@ -128,7 +128,12 @@ function reducer(state: NotesState, action: NotesActions): NotesState {
         ),
       };
     case "DELETE": {
-      if (state.notes.length === 1) {
+      if (
+        state.notes.length === 1 ||
+        !confirm(
+          "Deleting this is like tearing a page out of a book. Sure about that?",
+        )
+      ) {
         return state;
       }
 
