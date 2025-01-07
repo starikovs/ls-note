@@ -66,7 +66,7 @@ function NoteList() {
             <span>
               {new Date(note.modified).toLocaleDateString(undefined, {
                 day: "numeric",
-                month: "numeric",
+                month: "short",
                 year: "2-digit",
               })}
             </span>
