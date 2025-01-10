@@ -13,8 +13,8 @@ function Editor() {
     notesState.notes.find((note) => note.active) || notesState.notes[0];
 
   const handleChange = useCallback(
-    (content: Note["content"]) => {
-      dispatch({ type: "UPDATE_CONTENT", payload: content });
+    (content: Note["content"], caret?: Note["caret"]) => {
+      dispatch({ type: "UPDATE_CONTENT", payload: { content, caret } });
     },
     [dispatch],
   );

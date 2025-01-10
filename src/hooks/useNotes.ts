@@ -18,7 +18,7 @@ type SetActiveAction = {
 
 type UpdateContentAction = {
   type: "UPDATE_CONTENT";
-  payload: Note["content"];
+  payload: { content: Note["content"]; caret?: Note["caret"] };
 };
 
 type SelectPreviousAction = {
@@ -75,8 +75,12 @@ function reducer(state: NotesState, action: NotesActions): NotesState {
           note.active
             ? {
                 ...note,
-                content: action.payload,
+                content: action.payload.content,
                 modified: new Date().toUTCString(),
+                caret:
+                  typeof action.payload.caret === "number"
+                    ? action.payload.caret
+                    : note.caret,
               }
             : note,
         ),

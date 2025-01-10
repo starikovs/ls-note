@@ -11,7 +11,7 @@ import { Note } from "../models/note.ts";
 
 type NoteInputProps = {
   note: Note;
-  onChange(content: Note["content"]): void;
+  onChange(content: Note["content"], caret?: Note["caret"]): void;
   onCaretChange(noteId: Note["id"], caret: Note["caret"]): void;
 };
 
@@ -43,9 +43,16 @@ const NoteInput = memo(
     const handleChange = useCallback(
       (event: ChangeEvent<HTMLTextAreaElement>) => {
         const value = event.target.value;
+        const textareaElement = ref.current;
 
         setText(value);
-        onChange(value);
+
+        if (textareaElement) {
+          // for the case: load page -> edit current note -> reload -> get caret restored:
+          onChange(value, textareaElement.selectionStart);
+        } else {
+          onChange(value);
+        }
       },
       [onChange],
     );
