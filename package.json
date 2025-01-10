@@ -5,10 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && echo \"lsnote.website\" > dist/CNAME",
+    "build": "tsc -b && vite build && echo \"lsnote.website\" > docs/CNAME",
     "lint": "eslint ls-note",
-    "preview": "vite preview",
-    "deploy": "npm run build && git subtree push --prefix dist origin gh-page --force"
+    "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.3.1",
