@@ -15,15 +15,6 @@ type NoteInputProps = {
   onCaretChange(noteId: Note["id"], caret: Note["caret"]): void;
 };
 
-function triggerSaPageView() {
-  // Trigger a page view when the route changes
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  if ((window as any).sa) {
-    // @ts-expect-error "sa" should exist because I check above:
-    window.sa("pageview");
-  }
-}
-
 const NoteInput = memo(
   function NoteInput({ note, onChange, onCaretChange }: NoteInputProps) {
     const [text, setText] = useState(note.content || "");
@@ -43,8 +34,6 @@ const NoteInput = memo(
           textareaElement.focus();
         }, 10); // don't set 0 because on Safari setSelectionRange() doesn't work in this case
       }
-
-      triggerSaPageView();
 
       return () => {
         onCaretChange(note.id, textareaElement?.selectionStart || 0);
