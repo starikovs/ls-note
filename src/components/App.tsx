@@ -6,7 +6,7 @@ import useNotes from "../hooks/useNotes";
 import Editor from "./Editor";
 import NoteList from "./NoteList";
 import useGlobalKeydownHandler from "../hooks/useGlobalKeydownHandler.ts";
-import GitHubButton from "./GitHubButton.tsx";
+import InfoButton from "./InfoButton.tsx";
 
 function App() {
   const [notesState, dispatch] = useNotes();
@@ -26,7 +26,7 @@ function App() {
         <DispatchContext.Provider value={dispatch}>
           <Editor />
           <NoteList />
-          <GitHubButton />
+          <InfoButton />
         </DispatchContext.Provider>
       </NotesContext.Provider>
     </>

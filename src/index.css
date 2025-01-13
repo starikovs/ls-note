@@ -42,3 +42,13 @@
     background-color: #71717a;
   }
 }
+
+/* Dialog backdrop: */
+dialog:not([open]) {
+  display: none;
+}
+
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
