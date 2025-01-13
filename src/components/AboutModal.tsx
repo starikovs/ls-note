@@ -1,5 +1,7 @@
 import { useRef, memo, useEffect, useCallback, MouseEvent } from "react";
 
+declare const sa_event: (eventName: string) => void;
+
 type AboutModalProps = {
   isOpen: boolean;
   onClose(): void;
@@ -14,6 +16,14 @@ const AboutModal = memo(function AboutModal({
   useEffect(() => {
     if (isOpen) {
       dialogRef.current?.showModal();
+
+      try {
+        if (sa_event) {
+          sa_event("About modal is opened");
+        }
+      } catch {
+        console.warn("sa_event is not defined");
+      }
     } else {
       dialogRef.current?.close();
     }
@@ -55,6 +65,7 @@ const AboutModal = memo(function AboutModal({
         your browser. Notes are stored only in your browser's local storage. No
         data goes online — your notes stay private.
       </p>
+      <p>Use it for quick plain text edits or taking temporary notes.</p>
       <h2 className="text-xl text-zinc-400">Plain text</h2>
       <p>Your notes are 100% in plain text - no formatting, no fuss.</p>
       <h2 className="text-xl text-zinc-400">Open source</h2>
