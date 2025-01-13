@@ -8,7 +8,7 @@ export type Note = {
 };
 
 export function createFirstNote(): Note {
-  const content = `Welcome to LS Note!\n\nYou can create plain text notes here, and they’re stored right in your browser’s local storage — no cloud, no servers.\n\nYour notes stay offline — nothing gets sent out to the internet. Totally private.\n\nHotkeys for the desktop crew:\nCtrl+Alt+N – Create a new note\nCtrl+Alt+J – Jump to the next note\nCtrl+Alt+K – Go back to the previous note\nCtrl+Alt+D – Delete the selected note\n\nHappy note-taking!`;
+  const content = `Welcome to LS Note!\n\nYou can create plain text notes here, and they’re stored right in your browser’s local storage — no cloud, no servers.\n\nUse it for quick plain text edits or taking temporary notes.\n\nHotkeys for the desktop users:\nCtrl+Alt+N – Create a new note\nCtrl+Alt+J – Jump to the next note\nCtrl+Alt+K – Go back to the previous note\nCtrl+Alt+D – Delete the selected note\n\nHappy note-taking!`;
   return createNote({ content, active: true });
 }
 
