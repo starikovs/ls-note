@@ -41,9 +41,9 @@ Error generating stack: `+o.message+`
 
 You can create plain text notes here, and they’re stored right in your browser’s local storage — no cloud, no servers.
 
-Your notes stay offline — nothing gets sent out to the internet. Totally private.
+Use it for quick plain text edits or taking temporary notes.
 
-Hotkeys for the desktop crew:
+Hotkeys for the desktop users:
 Ctrl+Alt+N – Create a new note
 Ctrl+Alt+J – Jump to the next note
 Ctrl+Alt+K – Go back to the previous note
