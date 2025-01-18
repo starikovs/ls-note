@@ -59,9 +59,11 @@ function NoteList() {
           active={note.id === activeNote?.id}
           onClick={() => handleClick(note)}
         >
-          <div className="overflow-hidden">
-            {note.content.substring(0, 340)}
-          </div>
+          {(note.content.trim().length && (
+            <div className="overflow-hidden">
+              {note.content.substring(0, 340)}
+            </div>
+          )) || <div className="overflow-hidden text-zinc-400">Empty note</div>}
           <div className="flex items-center justify-between text-zinc-500">
             <span>
               {new Date(note.modified).toLocaleDateString(undefined, {

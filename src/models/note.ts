@@ -16,7 +16,7 @@ export function createNote(noteValues: Partial<Note> = {}): Note {
   return Object.assign(
     {
       id: crypto.randomUUID(),
-      content: "Your new note",
+      content: "",
       created: new Date().toUTCString(),
       modified: new Date().toUTCString(),
       active: false,
