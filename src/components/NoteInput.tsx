@@ -8,6 +8,19 @@ import {
 } from "react";
 
 import { Note } from "../models/note.ts";
+import InputStats from "./InputStats.tsx";
+
+const countLines = (s: string): number => {
+  let result = 1;
+
+  for (const c of s) {
+    if (c === "\n") {
+      result++;
+    }
+  }
+
+  return result;
+};
 
 type NoteInputProps = {
   note: Note;
@@ -17,11 +30,15 @@ type NoteInputProps = {
 
 const NoteInput = memo(
   function NoteInput({ note, onChange, onCaretChange }: NoteInputProps) {
-    const [text, setText] = useState(note.content || "");
+    const [text, setText] = useState(note.content);
+    const [lines, setLines] = useState(countLines(note.content));
+    const [chars, setChars] = useState(note.content.length);
     const ref = useRef<HTMLTextAreaElement>(null);
 
     useEffect(() => {
       setText(note.content);
+      setChars(note.content.length);
+      setLines(countLines(note.content));
 
       const textareaElement = ref.current;
 
@@ -46,6 +63,8 @@ const NoteInput = memo(
         const textareaElement = ref.current;
 
         setText(value);
+        setChars(value.length);
+        setLines(countLines(value));
 
         if (textareaElement) {
           // for the case: load page -> edit current note -> reload -> get caret restored:
@@ -59,7 +78,7 @@ const NoteInput = memo(
 
     return (
       <>
-        <div className="flex-grow">
+        <div className="relative flex-grow">
           <textarea
             placeholder="Start writing"
             className="h-full w-full resize-none rounded-md border-none bg-white p-8 text-inherit focus:outline-none dark:bg-zinc-900 dark:text-white"
@@ -67,6 +86,7 @@ const NoteInput = memo(
             value={text}
             onChange={handleChange}
           ></textarea>
+          <InputStats charsCount={chars} linesCount={lines} />
         </div>
       </>
     );
