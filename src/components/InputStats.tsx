@@ -5,7 +5,7 @@ type InputStatsProps = {
 
 function InputStats({ charsCount, linesCount }: InputStatsProps) {
   return (
-    <div className="absolute bottom-1 right-1 text-xs text-zinc-400">
+    <div className="absolute bottom-1 right-3 text-xs text-zinc-400">
       chars: {charsCount}, lines: {linesCount}
     </div>
   );
