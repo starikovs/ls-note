@@ -33,16 +33,6 @@ function Editor() {
       onCaretChange={handleCaretChange}
     />
   );
-  // return (
-  //   <div className="flex-grow">
-  //     <textarea
-  //       className="h-full w-full resize-none rounded-md border-none bg-white p-8 text-xl text-inherit first-line:text-3xl focus:outline-none dark:bg-zinc-900 dark:text-white"
-  //       ref={ref}
-  //       value={text}
-  //       onChange={handleChange}
-  //     ></textarea>
-  //   </div>
-  // );
 }
 
 export default Editor;
